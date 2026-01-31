@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm, cozy palette */
+    --background: 30 40% 98%;
+    --foreground: 25 20% 20%;
+
+    --card: 30 30% 96%;
+    --card-foreground: 25 20% 20%;
+
+    --popover: 30 30% 96%;
+    --popover-foreground: 25 20% 20%;
+
+    /* Soft peach/coral primary */
+    --primary: 15 80% 70%;
+    --primary-foreground: 25 20% 15%;
+
+    /* Warm lavender secondary */
+    --secondary: 270 30% 90%;
+    --secondary-foreground: 270 20% 30%;
+
+    /* Soft sage for accents */
+    --accent: 140 25% 85%;
+    --accent-foreground: 140 20% 25%;
+
+    --muted: 30 20% 94%;
+    --muted-foreground: 25 15% 45%;
+
+    --destructive: 0 60% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 15 60% 65%;
+
+    --radius: 1rem;
+
+    /* Custom tokens for the app */
+    --warmth: 25 70% 75%;
+    --calm: 200 30% 80%;
+    --gentle-glow: 15 80% 70%;
+    --soft-shadow: 0 8px 32px -8px hsl(25 30% 30% / 0.15);
+    --cozy-gradient: linear-gradient(135deg, hsl(30 40% 98%) 0%, hsl(15 50% 95%) 100%);
+    --presence-pulse: hsl(140 40% 70%);
+    --buddy-glow: hsl(270 40% 80%);
+
+    --sidebar-background: 30 30% 96%;
+    --sidebar-foreground: 25 20% 20%;
+    --sidebar-primary: 15 80% 70%;
+    --sidebar-primary-foreground: 25 20% 15%;
+    --sidebar-accent: 140 25% 85%;
+    --sidebar-accent-foreground: 140 20% 25%;
+    --sidebar-border: 30 20% 88%;
+    --sidebar-ring: 15 60% 65%;
+  }
+
+  .dark {
+    --background: 25 15% 10%;
+    --foreground: 30 20% 92%;
+
+    --card: 25 15% 14%;
+    --card-foreground: 30 20% 92%;
+
+    --popover: 25 15% 14%;
+    --popover-foreground: 30 20% 92%;
+
+    --primary: 15 70% 65%;
+    --primary-foreground: 25 20% 10%;
+
+    --secondary: 270 20% 25%;
+    --secondary-foreground: 270 30% 90%;
+
+    --accent: 140 20% 25%;
+    --accent-foreground: 140 30% 85%;
+
+    --muted: 25 15% 18%;
+    --muted-foreground: 30 15% 60%;
+
+    --destructive: 0 50% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 15% 20%;
+    --input: 25 15% 20%;
+    --ring: 15 50% 55%;
+
+    --warmth: 25 50% 45%;
+    --calm: 200 20% 35%;
+    --gentle-glow: 15 60% 50%;
+    --presence-pulse: hsl(140 30% 45%);
+    --buddy-glow: hsl(270 30% 50%);
+
+    --sidebar-background: 25 15% 12%;
+    --sidebar-foreground: 30 20% 92%;
+    --sidebar-primary: 15 70% 65%;
+    --sidebar-primary-foreground: 25 20% 10%;
+    --sidebar-accent: 140 20% 25%;
+    --sidebar-accent-foreground: 140 30% 85%;
+    --sidebar-border: 25 15% 20%;
+    --sidebar-ring: 15 50% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .cozy-gradient {
+    background: var(--cozy-gradient);
+  }
+
+  .soft-shadow {
+    box-shadow: var(--soft-shadow);
+  }
+
+  .presence-glow {
+    box-shadow: 0 0 20px 4px var(--presence-pulse);
+  }
+
+  .buddy-glow {
+    box-shadow: 0 0 16px 2px var(--buddy-glow);
+  }
+
+  .gentle-float {
+    animation: gentleFloat 4s ease-in-out infinite;
+  }
+
+  .breathing {
+    animation: breathing 4s ease-in-out infinite;
+  }
+
+  .soft-pulse {
+    animation: softPulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes breathing {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes softPulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
