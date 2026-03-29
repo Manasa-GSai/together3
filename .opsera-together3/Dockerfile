@@ -38,5 +38,9 @@ EXPOSE 8080
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
     CMD wget --no-verbose --tries=1 --spider http://localhost:8080/ || exit 1
 
+# [Opsera Security Scan Auto-Remediation] GHSA missing-user | 2026-03-28
+# Explicitly set non-root user to prevent container from running as root
+USER nginx
+
 # Run nginx
 CMD ["nginx", "-g", "daemon off;"]
